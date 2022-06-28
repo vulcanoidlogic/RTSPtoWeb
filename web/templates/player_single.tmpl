@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- player -->
+    <div class="col-12">
+      <div class="card" style="position: sticky; top: 20px;">
+        <div class="card-body p-0">
+          <video id="videoPlayer" autoplay controls muted playsinline></video>
+          <canvas id="canvas" class="d-none"></canvas>
+        </div>
+        <input type="hidden" id="uuid" value="{{ .uuid }}" />
+        <input type="hidden" id="channel" value="{{ .channel }}" />
+      </div>
+    </div>
+  </div>
+</div>

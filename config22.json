@@ -1,0 +1,159 @@
+{
+  "channel_defaults": {},
+  "server": {
+    "debug": true,
+    "http_debug": false,
+    "http_demo": true,
+    "http_dir": "web",
+    "http_login": "demo",
+    "http_password": "demo",
+    "http_port": ":8083",
+    "https": false,
+    "https_auto_tls": false,
+    "https_auto_tls_name": "",
+    "https_cert": "server.crt",
+    "https_key": "server.key",
+    "https_port": ":443",
+    "ice_credential": "",
+    "ice_servers": [
+      "stun:stun.l.google.com:19302"
+    ],
+    "ice_username": "",
+    "log_level": "debug",
+    "rtsp_port": ":5541",
+    "token": {
+      "backend": "http://127.0.0.1/test.php",
+      "enable": false
+    },
+    "webrtc_port_max": 0,
+    "webrtc_port_min": 0
+  },
+  "streams": {
+    "Camera01": {
+      "channels": {
+        "0": {
+          "name": "Camera01ChannelName",
+          "url": "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4"
+        }
+      },
+      "name": "Camera01Name"
+    },
+    "Camera02": {
+      "channels": {
+        "0": {
+          "name": "Camera02ChannelName",
+          "url": "rtsp://rtsp.stream/pattern"
+        }
+      },
+      "name": "Camera02Name"
+    },
+    "Camera03": {
+      "channels": {
+        "0": {
+          "url": "rtsp://s12.us-east-1.skyvdn.com/rtplive/FairfaxVideo0566",
+          "on_demand": true
+        }
+      },
+      "name": "Camera03Name"
+    },
+    "Camera12": {
+      "channels": {
+        "0": {
+          "name": "Camera12ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera12Name"
+    },
+    "Camera13": {
+      "channels": {
+        "0": {
+          "name": "Camera13ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera13Name"
+    },
+    "Camera14": {
+      "channels": {
+        "0": {
+          "name": "Camera14ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera14Name"
+    },
+    "Camera15": {
+      "channels": {
+        "0": {
+          "name": "Camera15ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera15Name"
+    },
+    "Camera16": {
+      "channels": {
+        "0": {
+          "name": "Camera16ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera16Name"
+    },
+    "Camera17": {
+      "channels": {
+        "0": {
+          "name": "Camera17ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera17Name"
+    },
+    "Camera18": {
+      "channels": {
+        "0": {
+          "name": "Camera18ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera18Name"
+    },
+    "Camera19": {
+      "channels": {
+        "0": {
+          "name": "Camera19ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera19Name"
+    },
+    "Camera20": {
+      "channels": {
+        "0": {
+          "name": "Camera20ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera20Name"
+    },
+    "Camera21": {
+      "channels": {
+        "0": {
+          "name": "Camera21ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera21Name"
+    },
+    "Camera22": {
+      "channels": {
+        "0": {
+          "name": "Camera22ChannelName",
+          "url": "rtsp://192.168.1.152/avc"
+        }
+      },
+      "name": "Camera22Name"
+    }
+  }
+}

@@ -5,9 +5,9 @@
     "http_debug": false,
     "http_demo": true,
     "http_dir": "web",
-    "http_login": "tmss",
-    "http_password": "tmss",
-    "http_port": ":8554",
+    "http_login": "demo",
+    "http_password": "demo",
+    "http_port": ":8083",
     "https": false,
     "https_auto_tls": false,
     "https_auto_tls_name": "",
@@ -29,14 +29,14 @@
     "webrtc_port_min": 0
   },
   "streams": {
-    "camera": {
+    "Camera02": {
       "channels": {
         "0": {
-          "name": "cameraChannel",
-          "url": "rtsp://192.168.1.152/avc"
+          "name": "Camera02ChannelName",
+          "url": "rtsp://rtsp.stream/pattern"
         }
       },
-      "name": "camera"
+      "name": "Camera02Name"
     }
   }
 }
