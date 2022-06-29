@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-  <title>RTSPtoWEB</title>
-  <link rel="stylesheet" href="/../static/css/adminlte.min.css">
-  <link rel="stylesheet" href="/../static/css/index.css">
-</head>
-
-<body>
+{{template "head.tmpl" .}}
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Play hls video</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active">Play hls video</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</div>
 <div class="content">
-  {{template "player_single.tmpl" .}}
+  {{template "player.tmpl" .}}
+
+  {{template "foot.tmpl" .}}
   </div>
   <script src="/../static/plugins/hlsjs/hls.min.js"></script>
-  <script src="/../static/plugins/jquery/jquery.min.js"></script>
-  <script src="/../static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/../static/js/index.js"></script>
 <script>
 
   $(document).ready(()=>{
@@ -62,10 +63,10 @@
     }
   });
 
-//  $("#videoPlayer")[0].addEventListener('loadeddata', () => {
-//    $("#videoPlayer")[0].play();
-//    makePic();
-//  });
+  $("#videoPlayer")[0].addEventListener('loadeddata', () => {
+    $("#videoPlayer")[0].play();
+    makePic();
+  });
 
   // $("#videoPlayer")[0].addEventListener('error', () => {
   //   console.log('video_error')
@@ -75,4 +76,3 @@
   }
 
 </script>
-</body>
