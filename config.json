@@ -33,7 +33,7 @@
       "channels": {
         "0": {
           "name": "Camera01ChannelName",
-          "url": "rtsp://172.1.1.1/avc"
+          "url": "rtsp://192.168.1.152/avc"
         }
       },
       "name": "Camera01Name"
@@ -50,8 +50,8 @@
     "Camera03": {
       "channels": {
         "0": {
-          "on_demand": true,
-          "url": "rtsp://s12.us-east-1.skyvdn.com/rtplive/FairfaxVideo0566"
+          "name": "Camera03ChannelName",
+          "url": "rtsp://192.168.1.154/avc"
         }
       },
       "name": "Camera03Name"
@@ -78,7 +78,7 @@
       "channels": {
         "0": {
           "name": "Camera06ChannelName",
-          "url": "rtsp://192.168.1.152/avc"
+          "url": "rtsp://192.168.1.155/avc"
         }
       },
       "name": "Camera06Name"
