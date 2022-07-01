@@ -52,6 +52,7 @@ func HTTPAPIServer() {
 		public.GET("/pages/stream/add", HTTPAPIAddStream)
 		public.GET("/pages/stream/edit/:uuid", HTTPAPIEditStream)
 		public.GET("/pages/player/hls/:uuid/:channel", HTTPAPIPlayHls)
+		public.GET("/pages/player/hlsll/:uuid/:channel", HTTPAPIPlayHlsLL)
 		public.GET("/pages/player/mse/:uuid/:channel", HTTPAPIPlayMse)
 		public.GET("/pages/player/webrtc/:uuid/:channel", HTTPAPIPlayWebrtc)
 		public.GET("/pages/multiview", HTTPAPIMultiview)
@@ -193,6 +194,16 @@ func HTTPAPIPlayHls(c *gin.Context) {
 		"streams": Storage.Streams,
 		"version": time.Now().String(),
 		"page":    "play_hls",
+		"uuid":    c.Param("uuid"),
+		"channel": c.Param("channel"),
+	})
+}
+func HTTPAPIPlayHlsLL(c *gin.Context) {
+	c.HTML(http.StatusOK, "play_hlsll.tmpl", gin.H{
+		"port":    Storage.ServerHTTPPort(),
+		"streams": Storage.Streams,
+		"version": time.Now().String(),
+		"page":    "play_hlsll",
 		"uuid":    c.Param("uuid"),
 		"channel": c.Param("channel"),
 	})

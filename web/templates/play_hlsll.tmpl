@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>RTSPtoWEB</title>
+  <link rel="stylesheet" href="/../static/css/adminlte.min.css">
+  <link rel="stylesheet" href="/../static/css/index.css">
+</head>
+
+<body>
+<div class="content">
+  {{template "player_single.tmpl" .}}
+  </div>
+  <script src="/../static/plugins/hlsjs/hls.min.js"></script>
+  <script src="/../static/plugins/jquery/jquery.min.js"></script>
+  <script src="/../static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/../static/js/index.js"></script>
+<script>
+
+  $(document).ready(()=>{
+    startPlay();
+  });
+  function startPlay(){
+    let uuid=$('#uuid').val();
+    let channel=$('#channel').val();
+    let url ='/stream/' + uuid + '/channel/'+channel+'/hlsll/live/index.m3u8';
+    if ($("#videoPlayer")[0].canPlayType('application/vnd.apple.mpegurl')) {
+        $("#videoPlayer")[0].src = url;
+        $("#videoPlayer")[0].load();
+    } else if (Hls.isSupported()) {
+        let hls=new Hls({manifestLoadingTimeOut:60000});
+        hls.loadSource(url);
+        hls.attachMedia($("#videoPlayer")[0]);
+        hls.on('error', function(e) {
+          console.log(e);
+        })
+    } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Your browser don`t support hls '
+          });
+    }
+
+  }
+  let canplaythroughTime=null;//time when  buffer have enaugh to play
+
+  $("#videoPlayer")[0].addEventListener('progress', () => {
+  if (typeof document.hidden !== "undefined" && document.hidden && canplaythroughTime!=null) {
+      //no sound, browser paused video without sound in background
+      $("#videoPlayer")[0].currentTime = $("#videoPlayer")[0].buffered.end(($("#videoPlayer")[0].buffered.length - 1)) - canplaythroughTime;
+  }
+  });
+
+  $("#videoPlayer")[0].addEventListener('canplaythrough', () => {
+    if(canplaythroughTime==null){
+      canplaythroughTime=$("#videoPlayer")[0].buffered.end(($("#videoPlayer")[0].buffered.length - 1));
+    }
+  });
+
+//  $("#videoPlayer")[0].addEventListener('loadeddata', () => {
+//    $("#videoPlayer")[0].play();
+//    makePic();
+//  });
+
+  // $("#videoPlayer")[0].addEventListener('error', () => {
+  //   console.log('video_error')
+  // });
+  $("#videoPlayer")[0].onerror = function() {
+    console.log("Error " + $("#videoPlayer")[0].error.code + "; details: " + $("#videoPlayer")[0].error.message);
+  }
+
+</script>
+</body>
