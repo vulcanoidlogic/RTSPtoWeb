@@ -1,3 +1,5 @@
+# Running locally:
+go run .
 # RTSPtoWeb share you ip camera to world!
 
 RTSPtoWeb converts your RTSP streams to formats consumable in a web browser
