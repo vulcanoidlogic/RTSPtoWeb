@@ -231,7 +231,7 @@
       "channels": {
         "0": {
           "name": "cameraChannel",
-          "url": "rtsp://192.1.168.152/avc"
+          "url": "rtsp://192.168.1.152/avc"
         }
       },
       "name": "camera"

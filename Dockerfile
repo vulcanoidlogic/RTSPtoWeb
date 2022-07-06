@@ -28,3 +28,15 @@ ENV GO111MODULE="on"
 ENV GIN_MODE="release"
 
 CMD ["./rtsp-to-web", "--config=/config/config.json"]
+
+# az login
+# az acr login --name iobtassets
+# docker build -t rtsptoweb -f Dockerfile  .
+# docker tag rtsptoweb iobtassets.azurecr.io/rtsptoweb:v1.0.0
+# docker push iobtassets.azurecr.io/rtsptoweb:v1.0.0
+#
+# RUN THIS IN UBUNTU - NOT FROM CMD PROMPT
+#
+# docker run -it  --network host -v /tmss/config.json:/config/config.json --rm --name rtsptoweb rtsptoweb
+# docker run -d  --network host -v /tmss/config.json:/config/config.json --rm --name rtsptoweb rtsptoweb
+# docker exec -it rtsptoweb bash
